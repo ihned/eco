@@ -1,0 +1,42 @@
+<!Doctype html>
+<head>
+	<meta charset="utf-8">
+</head>
+<h1>Odstranění číňanů</h1>
+<p>Postup:</p>
+<ul>
+	<li>V editoru otevřete HTML</li>
+	<li>Celý HTML kód zkopírujete sem:</li>
+</ul>
+<textarea id="input" cols="80" rows="20"></textarea>
+<ul><li>Klikněte na <button onclick="trans()">OPRAVIT</button></li>
+	<li> Z tohoto okénka si zkopírujte výsledný HTML kód</li></ul>
+<textarea id="output" cols="80" rows="20"></textarea>
+<ul><li>Vložte ho do Adminu zpět</li>
+	<li>Zkontrolujte, že jsou všechny znaky v pořádku</li>
+	<li>Když najdete chybu, <a href="mailto:martin.maly@economia.cz">napište</a></li></ul>
+<script>
+	var trans = function() {
+		var t = document.getElementById("input").value
+		t = t.replace(/([a-z\;])9/g,"$1š")
+		t = t.replace(/([a-z\;])9([a-z\&])/g,"$1š$2")
+		t = t.replace(/\&\#25361;/g,"č")
+		t = t.replace(/\&\#225;/g,"á")
+		t = t.replace(/9\&\#237;/g,"ší")
+		t = t.replace(/\&\#19849;/g,"ř")
+		t = t.replace(/\&\#13273;/g,"ů")
+		t = t.replace(/\&\#19785;/g,"ě")
+		t = t.replace(/\&\#8482;/g,"ž")
+		t = t.replace(/\&\#18129;/g,"ň")
+		t = t.replace(/\&\#65369;/g,'"')
+		t = t.replace(/\&\#65401;/g,'"')
+		t = t.replace(/\&\#18289;/g,"ť")
+		t = t.replace(/\&\#18001;/g,"Č")
+		t = t.replace(/\&\#18065;/g,"ď")
+		t = t.replace(/\&\#65177;/g,"Š")
+		t = t.replace(/\&\#25361;/g,"č")
+		t = t.replace(/\&\#25361;/g,"č")
+		t = t.replace(/\&\#25361;/g,"č")
+		document.getElementById("output").value=t
+	}
+</script>
